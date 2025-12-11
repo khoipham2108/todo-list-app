@@ -162,3 +162,20 @@ body {
   font-style: italic;
   padding: 20px;
 }
+
+/* Trong src/App.css */
+
+.date-input {
+  /* Tăng flex lên để ô ngày giờ rộng hơn một chút */
+  flex: 1.2; 
+  padding: 12px 10px;
+  border: 2px solid #eee;
+  border-radius: 8px;
+  font-size: 0.85rem; /* Giảm cỡ chữ chút xíu để hiển thị đủ ngày giờ */
+  outline: none;
+  color: #555;
+  font-family: inherit;
+  cursor: pointer;
+}
+
+/* Các phần khác giữ nguyên */

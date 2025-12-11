@@ -4,31 +4,68 @@ import TodoList from './TodoList';
 import './App.css';
 
 const TodoApp = () => {
-  // 1. Initialize State with some dummy data
   const [todos, setTodos] = useState([
-    { id: 1, text: 'Complete Lab 3 Exercises', completed: true },
-    { id: 2, text: 'Learn React Hooks', completed: false },
-    { id: 3, text: 'Build a Capstone Project', completed: false },
+    { 
+      id: 1, 
+      text: 'Go jogging in the neighborhood', 
+      deadline: '2025-12-11T07:00', 
+      completed: true 
+    },
+    { 
+      id: 2, 
+      text: 'Have breakfast and buy coldbrew', 
+      deadline: '', 
+      completed: true 
+    },
+    { 
+      id: 3, 
+      text: 'Group Meeting for the Capstone Project (Online)', 
+      deadline: '2025-12-11T09:30', 
+      completed: false 
+    },
+    { 
+      id: 4, 
+      text: 'Do the weekly grocery shopping', 
+      deadline: '',
+      completed: false 
+    },
+    { 
+      id: 5, 
+      text: 'Review for the Web Development exam (Chapters 3–4)', 
+      deadline: '2025-12-11T14:00', 
+      completed: false 
+    },
+    { 
+      id: 6, 
+      text: 'Go out to play soccer', 
+      deadline: '2025-12-11T19:00', 
+      completed: false 
+    },
+    { 
+      id: 7, 
+      text: 'Submit Lab 3 Web Report (Moodle)', 
+      deadline: '2025-12-11T23:59', 
+      completed: false 
+    },
   ]);
 
-  // 2. Add Function: Creates a new object with a timestamp ID
-  const addTodo = (text) => {
+
+  const addTodo = (text, deadline) => {
     const newTodo = {
       id: Date.now(),
       text: text,
+      deadline: deadline, 
       completed: false
     };
     setTodos([...todos, newTodo]);
   };
 
-  // 3. Toggle Function: Flips the 'completed' status
   const toggleTodo = (id) => {
     setTodos(todos.map(todo => 
       todo.id === id ? { ...todo, completed: !todo.completed } : todo
     ));
   };
 
-  // 4. Delete Function: Filters out the item with the matching ID
   const deleteTodo = (id) => {
     setTodos(todos.filter(todo => todo.id !== id));
   };
@@ -48,7 +85,7 @@ const TodoApp = () => {
       </div>
       
       <p className="footer-text">
-        Total: {todos.length} | Completed: {todos.filter(t => t.completed).length}
+        Tasks: {todos.length} | Done: {todos.filter(t => t.completed).length}
       </p>
     </div>
   );
