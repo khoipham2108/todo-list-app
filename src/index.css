@@ -1,0 +1,26 @@
+:root {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Thêm Reset box-sizing để tính toán kích thước padding không bị vỡ khung */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  /* ĐÃ XÓA: display: flex và place-items: center (Gây xung đột layout) */
+  /* ĐÃ XÓA: background-color và color mặc định (Để app.css tự quyết định) */
+}
+
+/* ĐÃ XÓA: Style cho h1, button, a và @media (Gây xung đột style) */
